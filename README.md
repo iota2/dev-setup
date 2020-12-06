@@ -19,6 +19,11 @@
 This project includes settings and configurations file for initial setup on
 a Linux machine. It uses Vundle to manage different plugins for vim.
 
+## GIT Fork And Branch Workflow
+Covered the instructions and commands required for using fork and branch base
+development workflow techniques.
+> Check details in: `git_fork_and_branch_workflow.md`
+
 ## Installed vim Plugins
 * scrooloose/nerdtreedg
 * majutsushi/tagbar
@@ -37,20 +42,21 @@ a Linux machine. It uses Vundle to manage different plugins for vim.
 * tmhedberg/SimpylFold
 * klen/python-mode
 * scrooloose/syntastic
+> Check details in: `vim_config.md`
 
 ## Installed bash Plugins
 * powerline-shell
 
-## License
-#### GNU GPU v3
+# License
+> `GNU GPU v3` <br>
 > This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License
- as published by the Free Software Foundation; either version 3
- of the License, or (at your option) any later version.
- This program is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
+> modify it under the terms of the GNU General Public License
+> as published by the Free Software Foundation; either version 3
+> of the License, or (at your option) any later version.
+> This program is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> GNU General Public License for more details.
 
  **Free Software, Hell Yeah!**
 

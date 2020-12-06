@@ -18,7 +18,7 @@
 
 # Configurations for VIM
 Following plugins are required to be installed separetely.
-Also for complete configurations some files need to be copied to respected folders.
+Also for some configurations marked files need to be copied to respected path.
 
 ## Selected Vundle plugins for VIM
 - [x] scrooloose/nerdtreedg
