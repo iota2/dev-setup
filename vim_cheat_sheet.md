@@ -19,7 +19,7 @@
 # VIM Cheat Sheet
 
 ### INSERT Mode
-Command         | Description
+Commands        | Description
 :---:           | :---
 <kbd>i</kbd>    | Insert at the cursor
 <kbd>a</kbd>    | Insert after the cursor
@@ -28,7 +28,7 @@ Command         | Description
 <kbd>O</kbd>    | Insert a new line before the current one
 
 ### CONTROL Commands
-Command	          | Description
+Commands          | Description
 :---:             | :---
 `:w`              | Save the file
 `:q`              | Quit and exit the file
@@ -36,8 +36,8 @@ Command	          | Description
 `q!`              | Exit without saving
 `:saveas <path>`  | Save the file to `<path>`
 
-### MOVE across Columns
-Command               | Description
+### MOVE Across Columns
+Commands              | Description
 :---:                 | :---
 `<n>` <kbd>h</kbd>    | Equivalent to arrow move left [for `n` number of moves]
 `<n>` <kbd>j</kbd>    | Equivalent to arrow move down [for `n` number of moves]
@@ -48,20 +48,19 @@ Command               | Description
 <kbd>$</kbd>          | Goto the end of line
 <kbd>g_</kbd>         | Goto last non-blank character of line
 
-### MOVE across line
-Command         | Description
-:---:           | :---
-<kbd>f</kbd>`a` | Goto next occurrence of character `a` in current line
-<kbd>t</kbd>`a` | Go before next occurrence of character `a` in current line
-<kbd>,</kbd>    | Goto NEXT occurrence of result of <kbd>f</kbd> / <kbd>t</kbd>
-<kbd>;</kbd>    | Goto PREVIOUS result from <kbd>f</kbd> / <kbd>t</kbd>
+### MOVE Across Line
+Commands          | Description
+:---:             | :---
+<kbd>f</kbd> `a`  | Goto next occurrence of character `a` in current line
+<kbd>t</kbd> `a`  | Go before next occurrence of character `a` in current line
+<kbd>,</kbd>      | Goto NEXT occurrence of result of <kbd>f</kbd> / <kbd>t</kbd>
+<kbd>;</kbd>      | Goto PREVIOUS result from <kbd>f</kbd> / <kbd>t</kbd>
 
-
-### MOVE across word/WORD
+### MOVE Across word/WORD
 > words are composed of letters and underscore character. lets call a WORD, a
 > group of letters separated by blank characters
 
-Command         | Description
+Commands        | Description
 :---:           | :---
 <kbd>w</kbd>    | Goto start of next word
 <kbd>W</kbd>    | Goto start of next WORD
@@ -70,34 +69,65 @@ Command         | Description
 <kbd>*</kbd>    | Goto NEXT occurrence of word under cursor
 <kbd>#</kbd>    | Goto PREVIOUS occurrence of word under cursor
 
-### MOVE across file
-Command                           | Description
+### MOVE Across File
+Commands                          | Description
 :---:                             | :---
 `<n>` <kbd>G</kbd>                | Goto line number `n`
 <kbd>G</kbd>                      | Goto last line for the file
 <kbd>gg</kbd>                     | Goto start of the file [Equivalent to `1G`]
-[<kbd>ctrl</kbd> + <kbd>a</kbd>]  | Increment the number at cursor
-`<n>` <kbd>></kbd>                | Indent Right `n` number of times
-`<n>` <kbd><</kbd>                | Indent left `n` number of times
-[<kbd>ctrl</kbd> + <kbd>n</kbd>]  | Auto complete text
+<kbd>%</kbd>                      | Match Bracket at cursor
+[<kbd>ctrl</kbd> + <kbd>o</kbd>]  | Jump back
+[<kbd>ctrl</kbd> + <kbd>i</kbd>]  | Jump forward
+
+### MOVE Across Panes
+Commands                          | Description
+:---:                             | :---
+[<kbd>ctrl</kbd> + <kbd>h</kbd>]  | Navigate to horizontally left pane
+[<kbd>ctrl</kbd> + <kbd>j</kbd>]  | Navigate to vertically lower pane
+[<kbd>ctrl</kbd> + <kbd>k</kbd>]  | Navigate to vertically upper pane
+[<kbd>ctrl</kbd> + <kbd>l</kbd>]  | Navigate to horizontally right pane
+[<kbd>ctrl</kbd> + <kbd>w</kbd>]  | Move across panes
+[<kbd>ctrl</kbd> + <kbd>w=</kbd>] | Make the pane sizes equal
+
+### SPLIT Layout
+Commands          | Description
+:---:             | :---
+`:sp <filename>`  | **Vertical Split** : Open file below current file
+`:vs <filename>`  | **Horizontal Split** : Open file to right of current file
 
 ### CUT-COPY-PASTE
-Command                               | Description
+Commands                              | Description
 :---:                                 | :---
 `<n>` <kbd>d</kbd>                    | delete `n` characters
 `<n>` <kbd>y</kbd>                    | Yank / Copy `n` characters
 <kbd>p</kbd>                          | Paste
 `<n>` <kbd>dd</kbd>                   | Delete & copy `n` line including current
 `<n>` <kbd>yy</kbd>                   | Copy `n` lines including current
-`<n>` <kbd>u</kbd>                  	| UNDO `n` number of times
+`<n>` <kbd>u</kbd>                    | UNDO `n` number of times
 `<n>` [<kbd>ctrl</kbd>+<kbd>r</kbd>]  | REDO `n` number of times
 
-### SEARCH
-Command                           | Description
+### AUTO-COMPLETE
+> These commands will work in insert mode.
+
+Commands                          | Description
 :---:                             | :---
-<kbd>/pattern</kbd>               | Search for occurrence of `pattern` in file
+[<kbd>ctrl</kbd> + <kbd>p</kbd>]  | Displays auto-complete suggestions
+[<kbd>ctrl</kbd> + <kbd>n</kbd>]  | Displays auto-complete suggestions
+
+### SEARCH
+Commands                          | Description
+:---:                             | :---
+`/pattern`                        | Search for occurrence of `pattern` in file
 <kbd>n</kbd>                      | Goto NEXT occurrence o searched pattern
 [<kbd>shift</kbd> + <kbd>n</kbd>] | Goto PREVIOUS occurrence of searched pattern
+
+### FIND-AND-REPLACE
+Commands          | Description
+:---:             | :---
+`:s/xxx/yyy/`     | Replace `xxx` with `yyy` at the first occurrence
+`:s/xxx/yyy/g`    | Replace `xxx` with `yyy` global (whole sentence)
+`:s/xxx/yyy/gc`   | Replace `xxx` with `yyy` global with confirm
+`:%s/xxx/yyy/g`   | Replace `xxx` with `yyy` global in the whole file
 
 ### COMBINATIONS
 ```
@@ -130,7 +160,7 @@ Suppose the cursor is at first `o` of the following line:
 ```
 (map (+) ("foo"))
 ```
-Command     | Selected outcome
+Commands    | Selected outcome
 :---:       | :---:
 `vi"`       | `foo`
 `va"`       | `"foo"`
@@ -162,6 +192,52 @@ Command     | Selected outcome
     * `A` : Enter append mode.
     * `,` : Write text `,` at cursor (End of line).
     * <kbd>ESC</kbd> : Exit append mode, writing `,` to all selected lines.
+
+### PLUG-IN Shortcuts
+**CtrlP** Commands                | Description
+:---:                             | :---
+[<kbd>ctrl</kbd> + <kbd>p</kbd>]  | Open files pane
+`:vs`							  | Open highlighted file in horizontal split
+`:sp`							  | Open highlighted file in vertical split
+[<kbd>ctrl</kbd> + <kbd>x</kbd>]  | Open highlighted file in horizontal split
+[<kbd>ctrl</kbd> + <kbd>v</kbd>]  | Open highlighted file in vertical split
+[<kbd>ctrl</kbd> + <kbd>b</kbd>]  | CtrlP MRU buffer list
+[<kbd>ctrl</kbd> + <kbd>f</kbd>]  | CtrlP function matching
+
+**Tagbar** Commands               | Description
+:---:                             | :---
+<kbd>F8</kbd>                     | Toggle Tagbar
+`:TagbarToggle`                   | Toggle Tagbar
+
+**NerdTree** Commands             | Description
+:---:                             | :---
+<kbd>"</kbd>                      | Open Nerd-Tree pane
+<kbd>s</kbd>                      | Open highlighted file in vertical split
+<kbd>i</kbd>                      | Open highlighted file in horizontal split
+
+**ctags** Commands                | Description
+:---:                             | :---
+`:ctags -R !`                     | Generate tags file for project
+`\c`                              | Call ctags on project
+`:ta`                             | Navigate list of tags
+[<kbd>ctrl</kbd> + <kbd>]</kbd>]  | Navigate via tags to item under cursor
+[<kbd>ctrl</kbd> + <kbd>t</kbd>]  | Navigate back after jumping with ctags
+
+**YCM** Commands                  | Description
+:---:                             | :---:
+`\g`                              | `:YcmCompleter GoTo`
+`\d`                              | `:YcmCompleter GoToDefinition`
+
+### Misc
+Commands                          | Description
+:---:                             | :---
+`u`                               | Convert selection (visual mode) to lowercase
+`U`                               | Convert selection (visual mode) to uppercase
+`~`                               | Swap case
+[<kbd>ctrl</kbd> + <kbd>a</kbd>]  | Increment the number at cursor
+`ga`                              | Show ASCII of char under cursor
+`<n>` <kbd>></kbd>                | Indent Right `n` number of times
+`<n>` <kbd><</kbd>                | Indent left `n` number of times
 
 # License
 > `GNU GPU v3` <br>
